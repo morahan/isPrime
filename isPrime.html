@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <link href = "isPrime.css" rel="stylesheet">
+  <link href = "isPrime.js" rel="script">
+  <head>
+  </head>
+
+  <body>
+    <h1>
+      Is it Prime?
+    </h1>
+    <h2>
+      Put in a number below to see if it is prime.
+    </h2>
+    <form onsubmit="return isPrime(document.getElementById('potentialPrime').value);" class="my-form">
+      <fieldset>
+        <legend> Test your prime skilzzz! </legend>
+        <p>
+          <label>number</label>
+          <input
+             id = "potentialPrime"
+             placeholder = "number" />
+          <button id = "testPrimeNumber" onclick="isPrime(document.getElementById('potentialPrime').value)">Submit</button>
+       </p>
+      </fieldset>
+    </form>
+  </body>
+</html>
