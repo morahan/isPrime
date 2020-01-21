@@ -12,3 +12,11 @@ legend {
   margin-bottom: 37px;
   margin: 0px;
 }
+
+#testPrimeNumber:hover {
+  background-color: #44ace8;
+}
+
+#testPrimeNumber:focus {
+  background-color: forestgreen;
+}
