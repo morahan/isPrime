@@ -1,56 +1,44 @@
-// document.getElementById('testPrimeNumber').addEventListener('click', (e) => e.preventDefault())
-function isPrime(num){
-  num = parseInt(document.getElementById('potentialPrime').value);
-  if (num === 2){
-    alert(`${num} is a Prime Number!`);
-  } else if (num < 2){
-    alert(`${num} is not Prime`);
+// document.getElementById('testPrimeButton').addEventListener('click', (e) => e.preventDefault())
+let isPrime = function(input){
+  let num;
+  let result;
+
+  if (typeof input === "string"){
+    input.includes(',') ? num = parseInt(input.split(',').join('')) : num = parseInt(input);
+  } else if (typeof input === "number") {
+    num = input;
   }
+
+  if (num === 2){
+    result = true;
+    // break;
+  } else if (num < 2){
+    result = false;
+    // break;
+  }
+
   let div = 2;
   let count = 2;
-  while (div < Math.ceil(num/2)){
-    if(num % div !== 0){
-        div ++;
-        count ++;
+  const countTarget = Math.ceil(num/2);
+
+  while (div <= Math.ceil(num/2)){
+    if (count === countTarget) {
+      result = true;
+    }
+    if (num % div === 0) {
+      result = false;
     } else {
-      alert(`${num} is not Prime`)
+      div++;
+      count++;
+      // break;
     }
   }
-  let countTarget = Math.ceil(num/2);
-  if (count === countTarget) {
-    alert(`${num} is a Prime Number!`);
+  if (result) {
+    return (document.getElementById("answer").innerHTML = `${num} is a Prime Number!`); 
+  } else {
+    return (document.getElementById("answer").innerHTML = `${num} is not Prime`);
   }
 }
 
-// let testPrime = document.getElementById('potentialPrime').value;
-// isPrime(testPrime);
 
-
-
-// baily version
-{/* <script>
-  document.getElementById('testPrimeNumber').addEventListener('click', (e) => e.preventDefault())
-    function isPrime() {
-    let num = parseInt(document.getElementById('potentialPrime').value);
-      if (num === 2) {
-    alert(`${num} is a Prime Number!`);
-      } else if (num < 2) {
-    alert(`${num} is not Prime`);
-}
-// did not debug below code
-let div = 2;
-let count = 2;
-      while (div < Math.ceil(num / 2)) {
-        if (num % div !== 0) {
-    div++;
-  count++;
-        } else {
-          return `${num} is not Prime`
-}
-}
-let countTarget = Math.ceil(num / 2);
-      if (count === countTarget) {
-        return `${num} is a Prime Number!`;
-}
-}
-  </script> */}
+// 1,000,000th prime = 15,485,863

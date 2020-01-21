@@ -14,22 +14,23 @@
     </h2>
     <form onsubmit="" class="my-form">
       <fieldset>
-        <legend> Test your prime skilzzz! </legend>
+        <legend> Test your prime skills! </legend>
         <p>
           <label>number</label>
           <input
-             id = "potentialPrime"
-             placeholder = "number" />
-          <button id = "testPrimeNumber" onclick="isPrime(document.getElementById('potentialPrime').value)">Submit</button>
+             id="potentialPrime"
+             placeholder="number" />
+          <button id="testPrimeButton" onclick="isPrime(document.getElementById('potentialPrime').value)">Submit</button>
        </p>
       </fieldset>
     </form>
     <div>
-      <!-- <textbox> ${isPrime(document.getElementById('potentialPrime').value)} </textbox> --> 
-      <div>
-      
-      </div>
-      <lable> Answer Goes Here </lable>
+      <hr>
+      <p id="answer"> Answer is... Drum Roll...  </p>
     </div>
+    <script>
+    document.getElementById('testPrimeButton').addEventListener('click', (e) => e.preventDefault())
+    </script>
   </body>
+
 </html>
